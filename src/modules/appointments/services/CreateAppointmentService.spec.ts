@@ -27,12 +27,12 @@ describe('CreateAppointment', () => {
 
     const appointmentDate = new Date(2021, 1, 10, 10);
 
-    const appointment = await createAppointment.execute({
+    await createAppointment.execute({
       date: appointmentDate,
       provider_id: '123123',
     });
 
-    expect(
+    await expect(
       createAppointment.execute({
         date: appointmentDate,
         provider_id: '123123',
